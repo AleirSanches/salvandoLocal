@@ -1,10 +1,13 @@
 import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import NotaEditor from "./src/componetes/NotaEditor";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {criaTabela} from "./src/sevicos/notas";
 
 
-
+useEffect(()=>{
+  criaTabela()
+},[])
 
 
 export default function App() {
@@ -13,10 +16,9 @@ export default function App() {
 
 
   async function mostrarNotas(){
-    const todasChaves = await AsyncStorage.getAllKeys()
-    const todasNotas = await AsyncStorage.multiGet(todasChaves)
-    setNotas(todasNotas);
-    console.log(notas)
+   
+    //setNotas(todasNotas);
+   // console.log(todasNotas)
   
   }
 
