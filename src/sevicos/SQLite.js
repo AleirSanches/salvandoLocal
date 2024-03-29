@@ -1,4 +1,5 @@
-import * as SQLite from "expo-sqlite";
+
+import * as SQLite from "react-native-sqlite-storage"
 
 function abreConexao() {
     const dataBase = SQLite.openDatabase("db.db")

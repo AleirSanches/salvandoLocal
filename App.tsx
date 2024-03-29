@@ -1,16 +1,17 @@
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import NotaEditor from "./src/componetes/NotaEditor";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useEffect, useState} from "react";
 import {criaTabela} from "./src/sevicos/notas";
 
 
-useEffect(()=>{
-  criaTabela()
-},[])
+
 
 
 export default function App() {
+
+  useEffect(()=>{
+    criaTabela()
+  },[])
 
   const [notas, setNotas] = useState([])
 
